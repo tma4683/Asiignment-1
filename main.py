@@ -29,12 +29,47 @@ def warning_doctor(abnormal_hour):
     print("this patient has abnormal levels at hour " + str(abnormal_hour))
 
 def draw_chart(avg_pulse1, avg_pulse2, avg_pulse3, avg_pulse4):
-    screen = turtle.getscreen()
-    t = turtle.Turtle
-    turtle.done()
+
+    t = turtle.Turtle()
+#pulse1
+    t.left(45)
+    t.forward(avg_pulse1)
+    t.right(45)
+    #pulse2
+    if avg_pulse2 < avg_pulse1 :
+        t.right(45)
+        t.forward(avg_pulse2)
+        t.left(45)
+    elif avg_pulse2 > avg_pulse1 :
+        t.left(45)
+        t.forward(avg_pulse2)
+        t.right(45)
+
+    #pulse3
+    if avg_pulse3 < avg_pulse2 :
+        t.right(45)
+        t.forward(avg_pulse3)
+        t.left(45)
+    elif avg_pulse3 > avg_pulse2 :
+        t.left(45)
+        t.forward(avg_pulse3)
+        t.right(45)
+
+    #pulse4
+    if avg_pulse4 < avg_pulse3 :
+        t.right(45)
+        t.forward(avg_pulse4)
+        t.left(45)
+    elif avg_pulse4 > avg_pulse3 :
+        t.left(45)
+        t.forward(avg_pulse4)
+        t.right(45)
+
+
+    turtle.mainloop()
 
 
 def test_measure_pulse():
     pass
 
-draw_chart(10,50,40,80)
+draw_chart(60,50,100,80)
