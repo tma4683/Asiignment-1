@@ -1,7 +1,10 @@
 import pytest
 import turtle
 def read_pulse():
-    pass
+    pulse1 = input("enter first pulse ")
+    pulse2 = input("enter second pulse ")
+    pulse3 = input("enter third pulse ")
+    return pulse1, pulse2, pulse3
 
 def measure_pulse(pulse_1,pulse_2,pulse_3):
     sum_pulse = pulse_1 + pulse_2 + pulse_3
@@ -9,8 +12,8 @@ def measure_pulse(pulse_1,pulse_2,pulse_3):
     return avg_pulse
 
 def abnormal(avg_pulse1, avg_pulse2, avg_pulse3, avg_pulse4):
-    min_level = 90
-    max_level = 126
+    min_level = 60
+    max_level = 90
     if avg_pulse1 < min_level or avg_pulse1 > max_level:
         return 1
     elif avg_pulse2 < min_level or avg_pulse2 > max_level:
