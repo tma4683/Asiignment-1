@@ -99,5 +99,23 @@ def test_abnormal() :
     if hour1 and hour2 and hour3 and hour4:
         assert result == None
 
+def main() :
+    print("hour 1")
+    pulse1, pulse2, pulse3 = read_pulse()
+    avg_hour1 = measure_pulse(pulse1, pulse2, pulse3)
+    print("hour 2")
+    pulse1, pulse2, pulse3 = read_pulse()
+    avg_hour2 = measure_pulse(pulse1, pulse2, pulse3)
+    print("hour 3")
+    pulse1, pulse2, pulse3 = read_pulse()
+    avg_hour3 = measure_pulse(pulse1, pulse2, pulse3)
+    print("hour 4")
+    pulse1, pulse2, pulse3 = read_pulse()
+    avg_hour4 = measure_pulse(pulse1, pulse2, pulse3)
 
+    result = abnormal(avg_hour1, avg_hour2, avg_hour3, avg_hour4)
+    if result != None :
+        warning_doctor(result)
+    draw_chart(avg_hour1, avg_hour2, avg_hour3, avg_hour4)
 
+main()
